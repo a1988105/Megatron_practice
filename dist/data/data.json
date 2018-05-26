@@ -1,0 +1,16 @@
+{  
+    "eid":123,
+    "en":"Event1",
+    "o":[  
+       {  
+          "sn":"selection1",
+          "sid":98765,
+          "odds":100
+       },
+       {  
+          "sn":"selection2",
+          "sid":98764,
+          "odds":20
+       }
+    ]
+ }
