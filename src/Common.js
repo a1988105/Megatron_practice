@@ -1,6 +1,6 @@
 const fetchData = async (url) => {
     try {
-      const response = await fetch(url, {mode: 'no-cors'})
+      const response = await fetch(url, {mode: 'same-origin'})
       const data = await response.json()
       return data
     } catch(ex) {
