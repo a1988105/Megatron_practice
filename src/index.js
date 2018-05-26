@@ -21,5 +21,4 @@ if (module.hot) {
     './App.js',
     () => renderApp(rootElement)
   );
-  console.log('update...')
 }
