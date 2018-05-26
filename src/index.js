@@ -1,4 +1,5 @@
 import 'babel-polyfill'
+import 'isomorphic-fetch'
 import { render } from 'react-dom'
 import React, { Component } from 'react'
 import { AppContainer } from 'react-hot-loader'
