@@ -1,7 +1,6 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebPackPlugin = require("html-webpack-plugin")
 
 const port = 9487
 const webpack_config  = (env, argv) => {
@@ -33,13 +32,7 @@ const webpack_config  = (env, argv) => {
         }
       ]
     },
-    plugins: [
-      new HtmlWebPackPlugin({
-        template: "./src/index.html",
-        filename: "./index.html"
-      }),
-      isdev ? new webpack.HotModuleReplacementPlugin() : new UglifyJsPlugin()
-    ]
+    plugins: getPlugins(isdev)
   }
 };
 
@@ -54,6 +47,17 @@ const getEntry = (isdev) => {
   [
     path.join(__dirname, 'src/Index')
   ]
+}
+
+const getPlugins = (isdev) => {
+  let plugins = [
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    })
+  ]
+  if (isdev) plugins.push(new webpack.HotModuleReplacementPlugin())
+  return plugins
 }
  
 module.exports = webpack_config
